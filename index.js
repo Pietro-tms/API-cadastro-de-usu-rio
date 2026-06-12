@@ -1,8 +1,11 @@
-//mongodb+srv://strimberpietro_db_user:ssfie8mD11T6Xhy6@cluster0.g9dlc2k.mongodb.net/Usersn?appName=Cluster0
 
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
+import dotenv from "dotenv";
+
+dotenv.config();
+
 
 const app = express();
 
@@ -16,7 +19,7 @@ app.use(express.json());
 
 mongoose
   .connect(
-    "mongodb+srv://strimberpietro_db_user:ssfie8mD11T6Xhy6@cluster0.g9dlc2k.mongodb.net/Users?appName=Cluster0",
+    process.env.MONGODB_URI
   )
   .then(() => {
     console.log("Conectado ao MongoDB");
