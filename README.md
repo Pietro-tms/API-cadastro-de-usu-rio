@@ -1,38 +1,54 @@
-# 🚀 API de Gerenciamento de Usuários
+# API de Cadastro de Usuários
 
-API REST desenvolvida com Node.js, Express e MongoDB para realizar operações de cadastro e gerenciamento de usuários.
+API REST para cadastrar, listar e excluir usuários, desenvolvida com Node.js, Express e MongoDB.
 
-## 📋 Funcionalidades
+## Funcionalidades
 
-* Criar usuários
-* Listar usuários cadastrados
-* Remover usuários
-* Validação de e-mail único
-* Integração com MongoDB
-* Configuração por variáveis de ambiente
+- Cadastro com nome, e-mail e idade
+- Listagem de usuários
+- Exclusão de usuários
+- Verificação de e-mail já cadastrado
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias
 
-* Node.js
-* Express
-* MongoDB
-* Mongoose
-* CORS
-* Dotenv
+- Node.js e Express
+- MongoDB e Mongoose
+- Dotenv e CORS
 
-## 🎓 Conceitos Aplicados
+## Rotas
 
-Durante o desenvolvimento desta API foram praticados conceitos importantes de desenvolvimento backend:
+- `POST /users` — cadastra um usuário
+- `GET /users` — lista os usuários
+- `DELETE /users/:id` — exclui um usuário
 
-* Criação de APIs RESTful
-* Operações CRUD
-* Integração com MongoDB
-* Modelagem de dados com Mongoose
-* Tratamento de erros e respostas HTTP
-* Middleware com Express
-* Configuração com variáveis de ambiente
-* Comunicação entre frontend e backend utilizando CORS
+Exemplo de dados para `POST /users`:
 
-## 📄 Licença
+```json
+{
+  "name": "Maria",
+  "email": "maria@exemplo.com",
+  "age": 25
+}
+```
 
-Projeto desenvolvido para fins de estudo e aprendizado.
+## Como executar
+
+```bash
+git clone https://github.com/Pietro-tms/API-cadastro-de-usu-rio.git
+cd API-cadastro-de-usu-rio
+npm install
+```
+
+Crie um arquivo `.env` na raiz do projeto com a conexão do MongoDB:
+
+```env
+MONGODB_URI=mongodb://127.0.0.1:27017/cadastro-usuarios
+```
+
+Com o MongoDB em execução, inicie a API:
+
+```bash
+node index.js
+```
+
+A API ficará disponível em `http://localhost:3000`.
